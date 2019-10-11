@@ -1,11 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `Novela by Narative`,
-    name: `Narative`,
-    siteUrl: `https://novela.narative.co`,
-    description: `This is my description that will be used in the meta tags and important for search results`,
+    title: `Anthony Morris | Software Engineer`,
+    description: `Endlessly curious dreamer building products for the future.`,
+    author: `@amorriscode`,
+    name: `amorris|code`,
+    siteUrl: `https://blog.anthonymorris.dev`,
     hero: {
-      heading: `Welcome to Novela, the simplest way to start publishing with Gatsby.`,
+      heading: ``,
       maxWidth: 652,
     },
     social: [
@@ -32,13 +33,14 @@ module.exports = {
     ],
   },
   plugins: [
+    'gatsby-plugin-theme-ui',
     {
       resolve: "@narative/gatsby-theme-novela",
       options: {
         contentPosts: "content/posts",
         contentAuthors: "content/authors",
         basePath: "/",
-        authorsPage: true,
+        authorsPage: false,
         sources: {
           local: true,
           // contentful: true,

@@ -1,7 +1,9 @@
 {
+  "name": "amorriscode",
   "private": true,
-  "name": "site",
-  "version": "1.0.0",
+  "description": "A personal websitee for Anthony Morris",
+  "version": "0.1.0",
+  "author": "Anthony Morris <anthony@amorrissound.com>",
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
@@ -9,10 +11,14 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.21",
+    "@mdx-js/react": "^1.5.1",
     "@narative/gatsby-theme-novela": "^0.*",
     "gatsby": "^2.13.41",
     "gatsby-plugin-manifest": "^2.2.4",
+    "gatsby-plugin-theme-ui": "^0.2.43",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "theme-ui": "^0.2.44"
   }
 }
