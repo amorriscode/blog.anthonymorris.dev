@@ -140,6 +140,7 @@ const showDetails = css`
 `;
 
 const ArticlesListContainer = styled.div<{ alwaysShowAllDetails?: boolean }>`
+  margin-top: 100px;
   transition: opacity 0.25s;
   ${p => p.alwaysShowAllDetails && showDetails}
 `;

@@ -143,7 +143,7 @@ const NextArticle = styled(Section)`
 
 const FooterNext = styled.h3`
   position: relative;
-  opacity: 0.4;
+  opacity: 0.8;
   margin-bottom: 100px;
   font-weight: 400;
   color: ${p => p.theme.colors.primary};
