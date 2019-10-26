@@ -12,43 +12,185 @@ The developer community can often be intimidating. The volunteers and organizers
 
 This post is going to be a reflection of _some_ of my favourite React Conf takeaways. Every single talk was worth watching, so I recommend you check out the recordings for [day one](https://www.youtube.com/watch?v=UxoX2faIgDQ) and [day two](https://www.youtube.com/watch?v=JDDxR1a15Yo). You might be surprised by some of the items on the list. I was too! Not everything is technical but there is a common thread weaving throughout.
 
-# Developer Experience In Service of User Exeperience
+## Developer Experience In Service of User Exeperience
 
-# Concurrent Mode, React Core, and Relay
+After [Tom Occhino](https://twitter.com/tomocchino) said it, I couldn't stop thinking about it. I couldn't stop seeing it in all the talks. I realized what I love so much about developer tools and the frontend.
 
-# CSS-in-JS-at-FB
+React aims to create a developer experience that allows us to **easily** learn to do powerful things, to launch and iterate by being **productive**, and to **scale** the software we make. These things alone make me like React. I feel like Facebook is doing a pretty good job on delivering.
 
-# Data-Driven JavaScript
+What is the point of all this though? Well, that's simple. It's to serve the user experience. We do what we do so that we can make our _users productive_. We should aim to help them get what they want done in elegant ways. Although what we help them achieve may not always be simple behind closed doors, it should always _feel that way_ to them.
 
-# Solving World Hunger
+Because React is a _gateway techhnology with 63% of JavaScript developers_ using it, the team are taking things like community very seriously. They have adopted the [Contributor Covenant](https://www.contributor-covenant.org/) and are welcoming criticism. As a community we should be able to accept criticism without having to defend ourselves. Elbert Hubbard said **"To avoid criticism say nothing, do nothing, be nothing."** What React is doing, and why, is important. This will naturally draw in criticism and allow the technology to grow. It will allow us as a community to _be better_.
 
-# Making REST Feel Better (and Safe)
+## Accessiblity and Performance and Concurrent Mode, Oh My!
 
-# Under React's Hood (Building a Custom Renderer)
+Have you ever had issues with focus while using React? I have. [Focus is really important](https://hacks.mozilla.org/2019/06/indicating-focus-to-improve-accessibility/) for many reasons. It helps people navigate their way through a page. This is extremely important for people who don't use a mouse. This topic will come up again later, but it was nice to see the React team wanting to make accessibility baked in.
 
-# Localization (t's Important!)
+One of the things that got me thinking the most during the conference was performnce. Facebook has to deal with performance issues that most of us never will, but the lessons they have learned can still be used to _make the user experience better_. It doesn't matter how fast a page loads if the perceived performance is slow.
 
-# The Accessiblity Marathon
+An example of this is [selective hydration](https://youtu.be/UxoX2faIgDQ?t=3535) which [Yuzhi Zheng](https://twitter.com/yuzhiz) explained during her talk. You may have heard of [Suspense](https://reactjs.org/docs/concurrent-mode-suspense.html#what-is-suspense-exactly) as well, which will improve user experiences all over the web.
 
-# You Don't Need Redux (Right?)
+### Concurrent Mode
 
-# Why Today Is Like 1999
+Imagine making a filterable list tied to a user input. With React, you'd probably have to debounce or throttle your updates to the list unless you're okay with jank.
 
-# Even Dev Tools Are About UX
+[Concurrent Mode](https://reactjs.org/docs/concurrent-mode-intro.html#what-is-concurrent-mode) will enable React apps to be more responsive by giving React the abiility to interupt blocks of lower priority work. This allows things like user input to get more priority over things like re-rendering a list. React will be able to work on several state updates _concurrently_. This will help us remove jarring and too frequent DOM updates. It will also allows us to give priority to interactions like hover and text input. We know that users expect these to be handled quickly or else they will feel laggy.
 
-# Suspenseful Data (Relay is Awesome)
+The React team have [shared many examples of concurrent mode patterns](https://reactjs.org/docs/concurrent-mode-patterns.html) that I recommend you check out.
 
-# React is Fiction
+## CSS-in-JS-at-FB
 
-# UX-Driven Fluid Animations
+I was interested to hear [Frank Yan](https://twitter.com/frankyan) announce that Facebook is building their own CSS-in-JS library. At first I thought, don't we have enough of them? This gave us an opportunity to learn more about some of the problems Facebook faces at scale and the creative ways they are solving them.
 
-# Iterating on Real Experiences
+Maintaining CSS can quickly get out of hand. Let's look at the following example:
 
-# The Complexity of Simple Things
+```css
+.blue { color: blue; }
 
-# Beautiful Transparency
+.red { color: red; }
+```
 
-# Wonder-Driven Development
+```html
+<span class="red blue">
+    Which color will I be?
+</span>
+```
+
+In this example, it would be nice if the text would be _blue_. That class comes second in the class declaration so we _should_ be able to expect it to take precedence. But it doesn't. The `.red` class comes second in the _cascading_ style sheet so that's what we end up with. If these classes were in diffrent style sheets, the order in which they are loaded in the page would matter.
+
+This problem might seem simple with such a naïve example but it can get out of hand quickly. Facebook has aimed to resolve things such as specificity wars, themeability, and [accessibility](https://youtu.be/UxoX2faIgDQ) with their new library.
+
+A couple of interesting specifics from the talk:
+- Developers can code in pixels but have their work compiled in REMs
+- They have created safety by implementing type checks (catch and fix typos, detect and remove unused styles, avoid cross-browser pitfalls)
+- Display accessibility errors to developers
+
+<div className="Image__Small">
+  <img
+    src="./images/accessibility-violation.png"
+    title="Accessibility Violation"
+    alt="Display accessibility errors to developers while they develop"
+  />
+</div>
+
+- Components can have default styles that can be overidden (including type safety!)
+- Rules are deduplicated which allows smaller CSS files (Facebook went from `413kb` to `74kb` in their recent frontend rewrite)
+
+### Atomic CSS
+
+Each class creates a unique property value pair. This is used to [optimize the components](https://youtu.be/UxoX2faIgDQ?t=4939)
+
+```css
+.c0 { color: blue; }
+.c1 { color: red; }
+.c2 { font-size: 16px; }
+```
+
+```jsx
+// Generated Component (Pre-Optimized)
+const styles = {
+    blue: {color: 'c0'},
+    default: {color: 'c1', fontSize: 'c2'},
+};
+
+function MyComponent(props) {
+    return (
+        <span className={styles(
+            'default',
+            props.isBlue && 'blue',
+        )}>
+            Hello World!
+        </span>
+    );
+}
+```
+
+This example shows how the CSS is atomic. It also shows how the color of a span could be set with props. However, this code gets optimized further.
+
+```jsx
+// The styles block is no longer needed
+function MyComponent(props) {
+    return (
+        <span className={styles(
+            (props.isBlue ? 'c0 ' : 'c1 ') + 'c2 '
+        )}>
+            Hello World!
+        </span>
+    );
+}
+```
+
+At of these things are extremely interesting and I look forward to them releasing their library in the future.
+
+## Data-Driven JavaScript
+
+Have you ever wondered how to make your pages feel faster? Become interactive sooner? Of course you have! [Ashley Watkins](https://twitter.com/catchingash) has too. She really got me thinking how I could use adjust my data-fetching approach to make a better user experience. I had already started to get excited about Relay but she added fuel to the fire.
+
+### Phased Code Splitting
+
+You can bet the folks at Facebook have been working hard to ensure their FMP is as fast as possible. One of the ways they are doing this is "Phased Code Splitting".
+
+With this approach, you can take a single blocking download and deliver it in phases. For example, if you consider the Facebook post, you could break it into 3 phases.
+
+1. Loading
+2. Display
+3. Analytics
+
+Each of these phases can have their own code fetch and render. All the data required for the FMP can be fetched at the same time the loading phase fetches its code.
+
+<div className="Image__Small">
+  <img
+    src="./images/phased-code-splitting.png"
+    title="Phased Code Splitting"
+    alt="Split your single blocking downloads into phases for faster render times"
+  />
+</div>
+
+### Time to First Meaningful painted
+
+To make your user experience as good as it can be, you should be thinking about [first meaningful paint](https://developers.google.com/web/tools/lighthouse/audits/first-meaningful-paint). This is basically how long it takes for the primaary content to appear on the page. There are many metrics you can look at and measure to improve your load times, but FMP sticks out.
+
+Relay allows you to make _streamed queries_ with GraphQL. This will allow you to mark certain data as critical and other data as less critical. You can then get the most important stuff from the server first and show that while fetching the rest of your data. With this approach, you can render content as it arrives!
+
+### Data-Driven Code Splitting
+
+This one blew my mind a bit. Relay is powerful, no question there. Relay has a new feature that lets you expand your queries to express which component code you need to render specific data types. 🤯 You can think of your code _as data_. As the server is resolving your GraphQL query, it can let the client know what component code it is going to need to download so it can get it faster!
+
+--
+
+Ashley's talk was pretty incredible and she promised that these things are just the beginning. I haven't used Relay yet but I'm excited to get started and I bet you will be too (especially when you hear more about what it can do).
+
+## Solving World Hunger
+
+## Making REST Feel Better (and Safe)
+
+## Under React's Hood (Building a Custom Renderer)
+
+## Localization (t's Important!)
+
+## The Accessiblity Marathon
+
+## You Don't Need Redux (Right?)
+
+## Why Today Is Like 1999
+
+## Even Dev Tools Are About UX
+
+## Suspenseful Data (Relay is Awesome)
+
+## React is Fiction
+
+## UX-Driven Fluid Animations
+
+## Iterating on Real Experiences
+
+## The Complexity of Simple Things
+
+## Beautiful Transparency
+
+## Wonder-Driven Development
+
+--
 
 As I mentioned before, these are just a _few of my takeaways_. There were many libraries, techniques, and philosophical ideas shared throughout the two day conference. I wish I could have captured them all! If you go next year you'll know what I mean.
 
