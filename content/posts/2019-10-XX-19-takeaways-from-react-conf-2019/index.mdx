@@ -52,7 +52,7 @@ Maintaining CSS can quickly get out of hand. Let's look at the following example
 
 ```html
 <span class="red blue">
-    Which color will I be?
+  Which color will I be?
 </span>
 ```
 
@@ -89,19 +89,19 @@ Each class creates a unique property value pair. This is used to [optimize the c
 ```jsx
 // Generated Component (Pre-Optimized)
 const styles = {
-    blue: {color: 'c0'},
-    default: {color: 'c1', fontSize: 'c2'},
+  blue: {color: 'c0'},
+  default: {color: 'c1', fontSize: 'c2'},
 };
 
 function MyComponent(props) {
-    return (
-        <span className={styles(
-            'default',
-            props.isBlue && 'blue',
-        )}>
-            Hello World!
-        </span>
-    );
+  return (
+    <span className={styles(
+      'default',
+      props.isBlue && 'blue',
+    )}>
+      Hello World!
+    </span>
+  );
 }
 ```
 
@@ -110,13 +110,13 @@ This example shows how the CSS is atomic. It also shows how the color of a span 
 ```jsx
 // The styles block is no longer needed
 function MyComponent(props) {
-    return (
-        <span className={styles(
-            (props.isBlue ? 'c0 ' : 'c1 ') + 'c2 '
-        )}>
-            Hello World!
-        </span>
-    );
+  return (
+    <span className={styles(
+      (props.isBlue ? 'c0 ' : 'c1 ') + 'c2 '
+    )}>
+      Hello World!
+    </span>
+  );
 }
 ```
 
@@ -155,8 +155,6 @@ Relay allows you to make _streamed queries_ with GraphQL. This will allow you to
 ### Data-Driven Code Splitting
 
 This one blew my mind a bit. Relay is powerful, no question there. Relay has a new feature that lets you expand your queries to express which component code you need to render specific data types. 🤯 You can think of your code _as data_. As the server is resolving your GraphQL query, it can let the client know what component code it is going to need to download so it can get it faster!
-
----
 
 Ashley's talk was pretty incredible and she promised that these things are just the beginning. I haven't used Relay yet but I'm excited to get started and I bet you will be too (especially when you hear more about what it can do).
 
@@ -217,7 +215,6 @@ Last year, [Nat Alison](https://twitter.com/tesseralis) asked the question "is R
 
 Why does this matter? Well, Nat put it pretty nicely. If React is only accessible to English speaking people, how many people aren't able to use the tools to build amazing products? How much are we losing out on by only having English speakers shape our digitl world? Only **20% of the world's population speaks English**. If we don't help others use React, we all suffer!
 
-
 <div className="Image__Small">
   <img
     src="./images/is-react-translated-yet.png"
@@ -230,13 +227,125 @@ It is incredible what Nat and thousands of people have accomplished in the last 
 
 ## The Accessiblity Marathon
 
+Just like localization, accessibility can be difficult. You have to think differently when you are developing for accessibility. You have to think about a broader audience, about people who might be _different_ than you. Sometimes that is difficult but we can all do it.
+
+Running a marathon is another example of something that can be difficult. According to RunRepeat, [1,298,725](https://runrepeat.com/research-marathon-performance-across-nations) people finished a marathon in 2018. They didn't wake up with the ability to do that. They started small and worked their way up to it.
+
+That's how we can approach accessibility. Taking an approach like this will remove some of the feeling of overwhelm if you are starting from square one. One of my favourite things about React Conf was learning about software development, and the world, from new viewpoints. [Brittany Feenstra](https://twitter.com/BrittanyIRL) was one of the people who helped me expand my perspective and I want to think more about accessibility going forward.
+
+I'm not going to complete the accessibility marathon over night but I can do a little more each day going forward.
+
 ## You Don't Need Redux (Right?)
+
+In 2019 there are [many](https://reactjs.org/docs/react-component.html#setstate) [different](https://reactjs.org/docs/context.html) [ways](https://reactjs.org/docs/hooks-intro.html) [to](https://github.com/reduxjs/redux) [manage](https://github.com/jamiebuilds/unstated) [React](https://github.com/mobxjs/mobx) [state](https://www.apollographql.com/docs/react/data/local-state/) (even [vegetarian friendly options](https://easy-peasy-v3.now.sh/)).
+
+With so many options out there it can be hard to know what is the right choice. Unfortunately the _right_ choice will depend on you. Just remember, _developer experience is in service of user experience_. Knowing that, I liked to approach my state management by going as simple as possible and changing as I outgrew my original decision.
+
+I am very happy that React has so many options built within it now. With Context and Hooks, you can do quite a lot without ever needing to pull in another dependancy.
+
+In order to move fast and break things, you have to be willing to throw out work you've done before. You need to fall in love with the refactor and move past decisions that worked for you when your product was different. I think the many options for React state reflect this. Some of the options require a lot of boiler plate, some don't. Some are baked in, some aren't. Pick what feels right for you now and adapt later if you need to.
 
 ## Why Today Is Like 1999
 
+[The last talk of the day](https://youtu.be/UxoX2faIgDQ?t=30919) had me interested from the title alone. What was it like to program in 1999? I was only nine years old then. Some people were coding by nine. I was not one of them. 😢
+
+This talk was another one that really needs to be watched. [Lee Byron](https://twitter.com/leeb) delivered a well-polished gem. He walked us through a time when PHP and the LAMP stack were the go to tools for web development. For those that weren't coding in 1999, he explained the evolution that lead Facebook to develop tools like React, GraphQL, and Relay. For those who were coding then, nostalgia.
+
+I have always respected the engineering work done at Facebook but this talk put everything in perspective. Working with React has felt like a privilage and now I know where that privilage came from. I'm inspired by the work people like Lee have and continue to do for the community.
+
 ## Even Dev Tools Are About UX
 
+The theme of the conference continued to be elaborated on as [Brian Vaughn](https://twitter.com/brian_d_vaughn) kicked off day two. If you build things with React, you've likely used the React Dev Tools. They have definitely helped me dig myself out of messes I've created.
+
+The React Dev Tools got a full rewrite that gives us:
+
+- Better performance
+- New API support
+- New UX features
+
+_See, even the dev tools focus on great UX!_
+
+I was impressed by the changes the team made to help navigate unfamiliar projects. Although you may thing of code you never touched as unfamiliar, we all know that even our own code can seem foreign with time. We can now see how prop flow through components, filter our component trees, deeply inspect components, and use hooks with the dev tools. One of the other things I loved seeing was the suspense toggle. That's a feature that seems extremely simple but will quickly become invaluable.
+
+Along with shared profiling, the new dev tools make it easier to find why things rendered. There [are similar tools out there](https://github.com/welldone-software/why-did-you-render) but now we can get insight on your renders directly in the dev tools.
+
+There are a ton of other great additions and I recommend you [go explore them for yourself](https://react-devtools-tutorial.now.sh/).
+
 ## Suspenseful Data (Relay is Awesome)
+
+I think I'm probably late to the Relay party. In fact, I'm late to the GraphQL party. In my [side project](https://writewithwrabit.com) I have been using GraphQL and I really enjoy it. After this conference I'm looking to explore Relay and take advantage of the power the combo provides.
+
+[React Suspense](https://reactjs.org/docs/concurrent-mode-suspense.html#what-is-suspense-exactly) wants to enable us to show _some_ of a UI without waiting for _all_ of it to become ready.
+
+Let's take a look at a basic example of a component that shows a loading state (using Suspense) when it is fetching data:
+
+```jsx
+const Composer = (props) => {
+  const data = useQuery(graphql`
+    query ComposerQuery {
+      me {
+        photo {
+          uri
+        }
+      }
+    }
+  `, variables);
+
+  return (
+    <div>
+      <img src={data.me.photo.uri} />
+    </div>
+  );
+}
+
+const Home = (props) => (
+  <Suspense fallback={<Placeholder />}>
+    <Composer />
+  </Suspense>
+);
+```
+
+In this example we have a `Composer` component that fetches a URI to my profile picture and then displays it. You can see in the `Home` componenet that we have wrapped `Composer` within a `Suspense` block. Then, while the data is loading, `Placeholder` will be rendered. This pattern can be thought of as _Fetch On Render_.
+
+Using this pattern, the loading sequence will be as follows:
+
+<div className="Image__Small">
+  <img
+    src="./images/fetch-on-render.png"
+    title="Fetch On Render Loading Sequence"
+    alt="Suspense allows you to render a fallback component while fetching data"
+  />
+</div>
+
+As you can see, this allows us to easily handle data loading. We can provide a better user experience by falling back to a loading component, like a placeholder or spinner.
+
+The pattern above already provides a lot of benefits and flexibility to do cool tihngs. However, the Facebook team didn't like that you had to _render_ to figure out what _data the component needs_. In order to get over this, they have started to use a pattern they call _Render As You Fetch_.
+
+Essentially, to enable Render As You Fetch, the Facebook team has decomposed `useQuery` into two pieces. It is separated into `preloadQuery` and `usePreloadedQuery`. What exactly does that mean?
+
+### `preloadQuery`
+
+This API will fetch data and give a reference to the results. It doesn't give you the actual data.
+
+You would call this API in the same event handler that would display new UI. For example, if a user clicks on a link that will trigger navigation to a new page, the event handler where we handle the click will use `preloadQuery`. Hovering over something to open a tooltip would be another example of where you'd call this API. The `onHover` event handler would call `preloadQuery`.
+
+### `usePreloadedQuery`
+
+This API takes the results of the `preloadQuery` call. It doesn't actually do any data fetching itself. It looks at the current state of the `preloadQuery`. If it is ready, it displays the results. If it is _not_ ready, it suspends. If the query has failed, then we can throw an error.
+
+No matter what happens, `usePreloadedQuery` will never trigger a new fetch. This makes it efficient and predictable.
+
+Using these two APIs instead of `useQuery` will provide a loading sequence that looks like the following:
+
+<div className="Image__Small">
+  <img
+    src="./images/render-as-you-fetch.png"
+    title="Render As You Fecth Loading Sequence"
+    alt="Render As You Fetch is a more effective way to load data before you render"
+  />
+</div>
+
+I definitely recommend you listen to [Joe Savona](https://twitter.com/en_JS) explain the concepts I've summarized above. He does a better job and gets more in-depth. This was one of my favourite talks because I'm excited by the possibilities this pattern enables and can't wait to try it myself.
 
 ## React is Fiction
 
