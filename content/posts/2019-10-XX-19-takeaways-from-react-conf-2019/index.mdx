@@ -58,7 +58,7 @@ Maintaining CSS can quickly get out of hand. Let's look at the following example
 
 In this example, it would be nice if the text would be _blue_. That class comes second in the class declaration so we _should_ be able to expect it to take precedence. But it doesn't. The `.red` class comes second in the _cascading_ style sheet so that's what we end up with. If these classes were in diffrent style sheets, the order in which they are loaded in the page would matter.
 
-This problem might seem simple with such a naïve example but it can get out of hand quickly. Facebook has aimed to resolve things such as specificity wars, themeability, and [accessibility](https://youtu.be/UxoX2faIgDQ) with their new library.
+This problem might seem simple with such a naïve example but it can get out of hand quickly. Facebook has aimed to resolve things such as specificity wars, themeability, and accessibility with their new library.
 
 A couple of interesting specifics from the talk:
 - Developers can code in pixels but have their work compiled in REMs
@@ -156,17 +156,77 @@ Relay allows you to make _streamed queries_ with GraphQL. This will allow you to
 
 This one blew my mind a bit. Relay is powerful, no question there. Relay has a new feature that lets you expand your queries to express which component code you need to render specific data types. 🤯 You can think of your code _as data_. As the server is resolving your GraphQL query, it can let the client know what component code it is going to need to download so it can get it faster!
 
---
+---
 
 Ashley's talk was pretty incredible and she promised that these things are just the beginning. I haven't used Relay yet but I'm excited to get started and I bet you will be too (especially when you hear more about what it can do).
 
 ## Solving World Hunger
 
+Day one started of with a great group of talks from people that work at Facebook. They were exciting from the technical perspective. We got to see a lot of upcoming features in the ecosystem to help us improve the user experience.
+
+[Tania Papazafeiropoulou](https://twitter.com/_Tany_) switched gears a little bit to educate the attendees about world hunger and a cool product she's working on called [OLIO](https://olioex.com). It helps people share food instead of wasting it and its powered by, you guessed it, React.
+
+It was upsetting to find out that **1/3 of all food produced is wasted**. On top of that, we could solve world hunder with just **25%** of food waste from the US, UK, and Europe. These sobering statistics make solving world hunger possible and it was awesome to hear about a team working to do that.
+
+This talk didn't get me hyped about new React features but it reinforced what makes React great. React (and React Native) enabled Tania's team to build out their product quickly and start making a positive impact.
+
 ## Making REST Feel Better (and Safe)
+
+[RESTful APIs](https://en.wikipedia.org/wiki/Representational_state_transfer) aren't a new hot 🔥 concept. They were formally defined in 2000 and have been used with success since then. That being said, REST does have some things that make it challenging.
+
+Facebook answered these challenges with GraphQL. GraphQL gives us an understandable definition of our data. It gives the client the power to get only what it needs. This is a pretty great way to get faster render times as you don't have to download as much data!
+
+[Tejas Kumar](https://twitter.com/tejaskumar_) summed up the differences quite nicely (see [his talk](https://youtu.be/UxoX2faIgDQ?t=9586) for more depth):
+
+#### REST
+
+- ❌ No formal spec
+- ❌ Guessing games (will an unallowed request respond with `400`, `401`, or `404`?)
+- ❌ Meaningless conversations
+- ❌ No contractual agreements
+
+
+#### GRAPHQL
+
+- ✅ Formal spec
+- ✅ No guessing games
+- ✅ Meaningful discussions (things that impact users)
+- ✅ Strong contractual agreements
+
+Many of us love GraphQL but sometimes it isn't an option for our APIs. Tejas and his team have [developed a tool to take some of the pitfalls away from REST](https://github.com/contiamo/restful-react). It includes code-generation from Swagger and OpenAPI specs.
+
+I don't believe I do Tejas justice but his talk left a lasting impression on me. Seriously, [go watch his talk](https://youtu.be/UxoX2faIgDQ?t=9586)!
 
 ## Under React's Hood (Building a Custom Renderer)
 
-## Localization (t's Important!)
+If you've ever given a demo of something you coded before, you know it often goes wrong. [Sophie Bits](https://twitter.com/sophiebits) took the risk and educated us on what it takes to build a React renderer.
+
+I don't consider myself a React expert (_yet_ 😅). I have never looked at the React codebase. I always assumed it would be beyond me. As I continue to learn and master React, I will continue digging deeper and will eventually get to the codebase itself. Sophie made it seem a lot less intimidating as she built her own custom render _in real time_ on the React Conf stage.
+
+Other than learning how awesome Sophie is, I feel like I came away with a small understanding of how React renderers work. She didn't leave me scratching my head. Everything was explains simply but also demonstrated clearly. What more can you ask for from a live coding demo?
+
+May the Demo Gods forever be in your favour Sophie!
+
+## Localization (It's Important!)
+
+As a native English speaker, I have to admit that localization isn't the first thing that comes to my mind when developing a product. Thankfully I am aware of this and am going to take it more seriously in the future.
+
+I think localization often gets missed gets missed because we focus on users who are just like us. There is no reality where your users will be exactly like you! That is why we need to do user testing, get user feedback, and be more inclusive to all types of humans.
+
+Last year, [Nat Alison](https://twitter.com/tesseralis) asked the question "is React translated yet?" When she originally posed the question, the answer was no.
+
+Why does this matter? Well, Nat put it pretty nicely. If React is only accessible to English speaking people, how many people aren't able to use the tools to build amazing products? How much are we losing out on by only having English speakers shape our digitl world? Only **20% of the world's population speaks English**. If we don't help others use React, we all suffer!
+
+
+<div className="Image__Small">
+  <img
+    src="./images/is-react-translated-yet.png"
+    title="Is React Translated Yet?"
+    alt="React docs have been translated to many languages but lots of work remains"
+  />
+</div>
+
+It is incredible what Nat and thousands of people have accomplished in the last year. There is still more work todo and [you can help if you are bilingual](https://isreacttranslatedyet.com/)!
 
 ## The Accessiblity Marathon
 
@@ -190,7 +250,7 @@ Ashley's talk was pretty incredible and she promised that these things are just 
 
 ## Wonder-Driven Development
 
---
+---
 
 As I mentioned before, these are just a _few of my takeaways_. There were many libraries, techniques, and philosophical ideas shared throughout the two day conference. I wish I could have captured them all! If you go next year you'll know what I mean.
 
