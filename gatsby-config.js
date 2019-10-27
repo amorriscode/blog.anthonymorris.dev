@@ -12,23 +12,19 @@ module.exports = {
     social: [
       {
         name: `twitter`,
-        url: `https://twitter.com/narative`,
+        url: `https://twitter.com/amorriscode`,
       },
       {
         name: `github`,
-        url: `https://github.com/narative`,
+        url: `https://github.com/amorriscode`,
       },
       {
         name: `instagram`,
-        url: `https://instagram.com/narative.co`,
+        url: `https://www.instagram.com/amorrisphoto/`,
       },
       {
         name: `linkedin`,
-        url: `https://www.linkedin.com/company/narative/`,
-      },
-      {
-        name: `dribbble`,
-        url: `https://dribbble.com/narativestudio`,
+        url: `https://linkedin.com/in/amorriscode/`,
       },
     ],
   },
@@ -50,13 +46,20 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Novela by Narative`,
-        short_name: `Novela`,
+        name: `amorriscode | blog`,
+        short_name: `amorriscode | blog`,
         start_url: `/`,
-        background_color: `#fff`,
-        theme_color: `#fff`,
+        background_color: `#1F1837`,
+        theme_color: `#1F1837`,
         display: `standalone`,
-        icon: `src/assets/favicon.png`,
+        icon: `src/assets/rocket-icon.png`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-143384618-2",
+        cookieDomain: "blog.anthonymorris.dev",
       },
     },
   ],
