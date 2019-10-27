@@ -4,7 +4,7 @@ export default {
   ...novelaTheme,
   initialColorMode: `dark`,
   colors: {
-    ...novelaTheme.colors,
+    ...novelaTheme.colors.modes.dark,
     grey: "#A6F673",
     accent: "#A6F673",
     background: "rgb(31, 24, 55)",
