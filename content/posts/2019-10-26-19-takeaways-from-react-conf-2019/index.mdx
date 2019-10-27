@@ -17,7 +17,7 @@ You might be surprised by some of the items on the list. I was too! Not everythi
 ## 1. Developer Experience In Service of User Exeperience
 
 After [Tom Occhino](https://twitter.com/tomocchino) said it, I couldn't stop thinking about it. I couldn't stop seeing it in all the talks. I realized what I love so much about developer tools and the frontend.
-
+ 
 React aims to create a developer experience that allows us to **easily** learn to do powerful things, to launch and iterate by being **productive**, and to **scale** the software we make. These things alone make me like React. I feel like Facebook is doing a pretty good job on delivering.
 
 What is the point of all this though? Well, that's simple. It's to serve the user experience. We do what we do so that we can make our _users productive_. We should aim to help them get what they want done in elegant ways. Although what we help them achieve may not always be simple behind closed doors, it should always _feel that way_ to them.
@@ -253,7 +253,7 @@ In order to move fast and break things, you have to be willing to throw out work
 
 This talk was another one that really needs to be watched. [Lee Byron](https://twitter.com/leeb) delivered a well-polished gem. He walked us through a time when PHP and the LAMP stack were the go to tools for web development. For those that weren't coding in 1999, he explained the evolution that lead Facebook to develop tools like React, GraphQL, and Relay. For those who were coding then, nostalgia.
 
-I have always respected the engineering work done at Facebook but this talk put everything in perspective. Working with React has felt like a privilage and now I know where that privilage came from. I'm inspired by the work people like Lee have and continue to do for the community.
+I have always respected the engineering work done at Facebook but this talk put everything in perspective. Working with React has felt like a privilege and now I know where that privilege came from. I'm inspired by the work people like Lee have and continue to do for the community.
 
 ## 12. Even Dev Tools Are About UX
 
@@ -307,7 +307,7 @@ const Home = (props) => (
 );
 ```
 
-In this example we have a `Composer` component that fetches a URI to my profile picture and then displays it. You can see in the `Home` componenet that we have wrapped `Composer` within a `Suspense` block. Then, while the data is loading, `Placeholder` will be rendered. This pattern can be thought of as _Fetch On Render_.
+In this example we have a `Composer` component that fetches a URI to my profile picture and then displays it. You can see in the `Home` component that we have wrapped `Composer` within a `Suspense` block. Then, while the data is loading, `Placeholder` will be rendered. This pattern can be thought of as _Fetch On Render_.
 
 Using this pattern, the loading sequence will be as follows:
 
@@ -321,7 +321,7 @@ Using this pattern, the loading sequence will be as follows:
 
 As you can see, this allows us to easily handle data loading. We can provide a better user experience by falling back to a loading component, like a placeholder or spinner.
 
-The pattern above already provides a lot of benefits and flexibility to do cool tihngs. However, the Facebook team didn't like that you had to _render_ to figure out what _data the component needs_. In order to get over this, they have started to use a pattern they call _Render As You Fetch_.
+The pattern above already provides a lot of benefits and flexibility to do cool things. However, the Facebook team didn't like that you had to _render_ to figure out what _data the component needs_. In order to get over this, they have started to use a pattern they call _Render As You Fetch_.
 
 Essentially, to enable Render As You Fetch, the Facebook team has decomposed `useQuery` into two pieces. It is separated into `preloadQuery` and `usePreloadedQuery`. What exactly does that mean?
 
@@ -342,7 +342,7 @@ Using these two APIs instead of `useQuery` will provide a loading sequence that 
 <div className="Image__Small">
   <img
     src="./images/render-as-you-fetch.png"
-    title="Render As You Fecth Loading Sequence"
+    title="Render As You Fetch Loading Sequence"
     alt="Render As You Fetch is a more effective way to load data before you render"
   />
 </div>
@@ -400,7 +400,7 @@ This seems like it will work great, but what if we want to add a nav item that i
   ];
 ```
 
-Our `Nav` component doesn't handle this edge case. We _could_ easily implement a method for it to handle it but this could easily get out of hand. We could refactor the `Nav` componnt to look something like this:
+Our `Nav` component doesn't handle this edge case. We _could_ easily implement a method for it to handle it but this could easily get out of hand. We could refactor the `Nav` component to look something like this:
 
 ```jsx
 const Nav = ({ links }) => (
@@ -436,15 +436,15 @@ const Header = () => {
 }
 ```
 
-I've simplified the example that Jenn delivered in her talk but I think it gets the point across. The second `Header` component is much easier to reason about. The abstraction didn't provide much benefit even though we mighth be repeating ourselves now. If we wanted to add an `Icon` component into _one_ of the links, we don't have to handle all the edge cases in a `Nav` component anymore, we can just add it where we want it.
+I've simplified the example that Jenn delivered in her talk but I think it gets the point across. The second `Header` component is much easier to reason about. The abstraction didn't provide much benefit even though we might be repeating ourselves now. If we wanted to add an `Icon` component into _one_ of the links, we don't have to handle all the edge cases in a `Nav` component anymore, we can just add it where we want it.
 
 Jenn also quoted a great Neil Gaiman quote that I can't resist sharing.
 
 > Remember that, sooner or later, before it reaches perfection, you will have to let it go and move on and start to write the next thing.
 
-I've been practicing getting to _good enough_ while I've been building [Wrabit](https://writewithwrabit.com), a mental health writing platform. Sometimes it makes me feel like less of a developer. Sometimes it makes me feel lazy. In the end, I'm going with what I can easly understand, what I can ship, and what I can always refactor later.
+I've been practicing getting to _good enough_ while I've been building [Wrabit](https://writewithwrabit.com), a mental health writing platform. Sometimes it makes me feel like less of a developer. Sometimes it makes me feel lazy. In the end, I'm going with what I can easily understand, what I can ship, and what I can always refactor later.
 
-As Jenn said, refactoring is not failure. Her talk weaved creative writing with programming so elegantly, I'll definitely be watcing it again.s
+As Jenn said, refactoring is not failure. Her talk weaved creative writing with programming so elegantly, I'll definitely be watching it again.
 
 
 ## 15. UX-Driven Fluid Animations
@@ -453,7 +453,7 @@ I haven't gotten around to making too many animations. I envision a future where
 
 Like most of the talks, [Alex Holachek](https://twitter.com/alex_holachek) got me thinking in a new way. I love UI interactions. They make me feel warm and fuzzy inside. When looking at them, I'm guilty of not considering all of the users.
 
-How to the fancy animatons work for someone using a [Nokia 6](https://www.nokia.com/phones/en_int/nokia-6)? At $283.97 CAD from Amazon, I could afford that many times over before the new iPhone. I'm guessing a lot of other people are in the same camp.
+How to the fancy animations work for someone using a [Nokia 6](https://www.nokia.com/phones/en_int/nokia-6)? At $283.97 CAD from Amazon, I could afford that many times over before the new iPhone. I'm guessing a lot of other people are in the same camp.
 
 Alex helped me remember to think more about the average. Average phones, average data speeds. Build for average and high end will always be fine.
 
@@ -461,13 +461,13 @@ Also, `event.preventDefault()` will do bad things to your scrolling.
 
 ## 16. Iterating on Real Experiences
 
-If you couldn't tell, there was tons of variety in the talks this year. [Luca Demasco](https://twitter.com/Lucapodular) kept things fresh by showing us the process of iteration as he devloped the [Wick Editor](https://www.wickeditor.com) with [Zach Rispoli](https://twitter.com/zrispo).
+If you couldn't tell, there was tons of variety in the talks this year. [Luca Demasco](https://twitter.com/Lucapodular) kept things fresh by showing us the process of iteration as he developed the [Wick Editor](https://www.wickeditor.com) with [Zach Rispoli](https://twitter.com/zrispo).
 
 The Wick Editor is a free and open-source tool for creating games, animations, and anything else your mind can come up with. When Luca showed off the current version, I was really impressed with the UI. It seemed intuitive and had plenty of functionality. That wasn't always the case.
 
-Luca and friends got to where they are today by constantly iterating. They didn't just iterate for the sake of iteration either. They to Wick into many different environments (schools, libraries, etc.) and brought the interface in front of many different users (begineer, intermeidate, young, old). They took a laser focused approach and gathered feedback that helped make Wick what it is today.
+Luca and friends got to where they are today by constantly iterating. They didn't just iterate for the sake of iteration either. They brought Wick into many different environments (schools, libraries, etc.) and brought the interface in front of many different users (beginner, intermediate, young, old). They took a laser focused approach and gathered feedback that helped make Wick what it is today.
 
-The honesty in the process inspired me as I think about how to iterate on my own product. How can I launch somethhing quickly and iterate with intention? I don't have that experience so sometimes the confidence escapes me but its a process I'm excited to take. Seeing people like Luca share his experience encourages me and I'm grateful for the honesty that was shared by everyone during the conference.
+The honesty in the process inspired me as I think about how to iterate on my own product. How can I launch something quickly and iterate with intention? I don't have that experience so sometimes the confidence escapes me but its a process I'm excited to take. Seeing people like Luca share his experience encourages me and I'm grateful for the honesty that was shared by everyone during the conference.
 
 ## 17. The Complexity of Simple Things
 
@@ -479,13 +479,13 @@ You might not think that one simple React component could be all that complex. Y
 
 Jed travelled a long (and sometimes arduous) road to get [react-select](https://react-select.com) to where it is today. He shared great insights on what its like to develop a massively popular open-source project. He also showed how simple things can often be quite complex.
 
-I was inspired by Jed when he showed off the evolution of [react-select](https://react-select.com) to v2.0. He reiteratd the importance of refactoring and the wonderful things you can accomplish if you stop chasing perfection.
+I was inspired by Jed when he showed off the evolution of [react-select](https://react-select.com) to v2.0. He reiterated the importance of refactoring and the wonderful things you can accomplish if you stop chasing perfection.
 
 ## 18. Beautiful Transparency
 
 Government spending is an important topic. We deserve to see where our tax money is going so that we can keep the government accountable.
 
-[Lizzie Salita](https://twitter.com/ebsalita) demonstrated that government websites can be performant, easy to use, and beautiful. I was actually quite surprised when she demoed the [USAspending.gov](https://www.usaspending.gov/#/explorer) spending explorer. Compare that to the [Canadian version](https://www.canada.ca/en/treasury-board-secretariat/topics/reporting-government-spending.html) and you'll get an example of how much React can shape the user experince.
+[Lizzie Salita](https://twitter.com/ebsalita) demonstrated that government websites can be performant, easy to use, and beautiful. I was actually quite surprised when she demoed the [USAspending.gov](https://www.usaspending.gov/#/explorer) spending explorer. Compare that to the [Canadian version](https://www.canada.ca/en/treasury-board-secretariat/topics/reporting-government-spending.html) and you'll get an example of how much React can shape the user experience.
 
 I'm slowly starting to get my feet wet with regards to politics. While I have always tried to stay informed enough to vote, there is so much more I can do. Having tools like [USAspending.gov](https://www.usaspending.gov) in your hands makes it easier and more interesting. I think we should continue to develop tooling like this to enable everyone to stay informed so that we can all be involved in shaping our future.
 
@@ -493,7 +493,7 @@ I'm slowly starting to get my feet wet with regards to politics. While I have al
 
 The last talk of the conference really blew my mind. Like [Alex Anderson](https://twitter.com/ralex1993), I am a big fan of space 🚀. Alex has built an insanely complex starship simulator called [Thorium](https://thoriumsim.com/).
 
-The Thorium simulator empowers many organizations like the [Lion's Gate Space Center](https://www.thelionsgatecenter.com/about) to provide STEM-related activities for all kinds of people. These space centers allow students to grow through group activities that are highly interactive and educational.
+The Thorium simulator empowers many organizations like the [Lion's Gate Space Center](https://www.thelionsgatecenter.com/about) to provide STEM-related activities for all kinds of people. These space centres allow students to grow through group activities that are highly interactive and educational.
 
 There have been more than a few presentations and people at React Conf doing highly inspirational things for good causes. Alex's work sticks out because his passion leaks out of every word he says. He loves what he is doing and is an extremely talented engineer. He's using the technology available to him to build great experiences for kids and adults alike.
 
