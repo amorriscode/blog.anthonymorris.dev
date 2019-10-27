@@ -6,13 +6,13 @@ hero: ./images/react-conf-header.png
 excerpt: With the growing community interest in Gatsby, we hope to create more resources that make it easier for anyone to grasp the power of this incredible tool.
 ---
 
-Well [React Conf](https://conf.reactjs.org) is officially over. There were a lot of great talks, human beings, activities, and of course food. I'm still digesting the whole event but, as far as conferences go, this has been the best one I've attended so far.
+Well [React Conf](https://conf.reactjs.org) ⚛️ is officially over. There were a lot of great talks, human beings, activities, and of course food. I'm still digesting the whole event but, as far as conferences go, this has been the best one I've attended so far.
 
 The developer community can often be intimidating. The volunteers and organizers did an incredible job making everyone at the conference feel welcome. I was impressed at the lengths they went to make us all feel like we belonged. There were even some _introvert activities_ on the second day. Have you ever painted a minifigure (think [Warhammer](https://www.games-workshop.com/en-CA/Warhammer)) at a conference? I have now! So for all those involved, thanks!
 
-This post is going to be a reflection of _some_ of my favourite React Conf takeaways. Every single talk was worth watching, so I recommend you check out the recordings for [day one](https://www.youtube.com/watch?v=UxoX2faIgDQ) and [day two](https://www.youtube.com/watch?v=JDDxR1a15Yo). You might be surprised by some of the items on the list. I was too! Not everything is technical but there is a common thread weaving throughout.
+This post is going to be a reflection of _some_ of my favourite React Conf takeaways. Every single talk was worth watching, so I recommend you check out the recordings for [day one](https://www.youtube.com/watch?v=UxoX2faIgDQ) and [day two](https://www.youtube.com/watch?v=JDDxR1a15Yo). I've included timestamps to all the talks at the bottom of the post.
 
-_Since I think you should watch all the talks and the individual talks haven't been released I've left a list of links to the YouTube timestamps at the bottom!_
+You might be surprised by some of the items on the list. I was too! Not everything is technical but there is a common thread weaving throughout.
 
 ## Developer Experience In Service of User Exeperience
 
@@ -28,7 +28,7 @@ Because React is a _gateway techhnology with 63% of JavaScript developers_ using
 
 Have you ever had issues with focus while using React? I have. [Focus is really important](https://hacks.mozilla.org/2019/06/indicating-focus-to-improve-accessibility/) for many reasons. It helps people navigate their way through a page. This is extremely important for people who don't use a mouse. This topic will come up again later, but it was nice to see the React team wanting to make accessibility baked in.
 
-One of the things that got me thinking the most during the conference was performnce. Facebook has to deal with performance issues that most of us never will, but the lessons they have learned can still be used to _make the user experience better_. It doesn't matter how fast a page loads if the perceived performance is slow.
+One of the things that got me thinking the most during the conference was performance. Facebook has to deal with performance issues that most of us never will, but the lessons they have learned can still be used to _make the user experience better_. It doesn't matter how fast a page loads if the perceived performance is slow.
 
 An example of this is [selective hydration](https://youtu.be/UxoX2faIgDQ?t=3535) which [Yuzhi Zheng](https://twitter.com/yuzhiz) explained during her talk. You may have heard of [Suspense](https://reactjs.org/docs/concurrent-mode-suspense.html#what-is-suspense-exactly) as well, which will improve user experiences all over the web.
 
@@ -58,7 +58,7 @@ Maintaining CSS can quickly get out of hand. Let's look at the following example
 </span>
 ```
 
-In this example, it would be nice if the text would be _blue_. That class comes second in the class declaration so we _should_ be able to expect it to take precedence. But it doesn't. The `.red` class comes second in the _cascading_ style sheet so that's what we end up with. If these classes were in diffrent style sheets, the order in which they are loaded in the page would matter.
+In this example, it would be nice if the text would be _blue_. That class comes second in the class declaration so we _should_ be able to expect it to take precedence. But it doesn't. The `.red` class comes second in the _cascading_ style sheet so that's what we end up with. If these classes were in different style sheets, the order in which they are loaded in the page would matter.
 
 This problem might seem simple with such a naïve example but it can get out of hand quickly. Facebook has aimed to resolve things such as specificity wars, themeability, and accessibility with their new library.
 
@@ -150,7 +150,7 @@ Each of these phases can have their own code fetch and render. All the data requ
 
 ### Time to First Meaningful painted
 
-To make your user experience as good as it can be, you should be thinking about [first meaningful paint](https://developers.google.com/web/tools/lighthouse/audits/first-meaningful-paint). This is basically how long it takes for the primaary content to appear on the page. There are many metrics you can look at and measure to improve your load times, but FMP sticks out.
+To make your user experience as good as it can be, you should be thinking about [first meaningful paint](https://developers.google.com/web/tools/lighthouse/audits/first-meaningful-paint). This is basically how long it takes for the primary content to appear on the page. There are many metrics you can look at and measure to improve your load times, but FMP sticks out.
 
 Relay allows you to make _streamed queries_ with GraphQL. This will allow you to mark certain data as critical and other data as less critical. You can then get the most important stuff from the server first and show that while fetching the rest of your data. With this approach, you can render content as it arrives!
 
@@ -166,7 +166,7 @@ Day one started of with a great group of talks from people that work at Facebook
 
 [Tania Papazafeiropoulou](https://twitter.com/_Tany_) switched gears a little bit to educate the attendees about world hunger and a cool product she's working on called [OLIO](https://olioex.com). It helps people share food instead of wasting it and its powered by, you guessed it, React.
 
-It was upsetting to find out that **1/3 of all food produced is wasted**. On top of that, we could solve world hunder with just **25%** of food waste from the US, UK, and Europe. These sobering statistics make solving world hunger possible and it was awesome to hear about a team working to do that.
+It was upsetting to find out that **1/3 of all food produced is wasted**. On top of that, we could solve world hunger with just **25%** of food waste from the US, UK, and Europe. These sobering statistics make solving world hunger possible and it was awesome to hear about a team working to do that.
 
 This talk didn't get me hyped about new React features but it reinforced what makes React great. React (and React Native) enabled Tania's team to build out their product quickly and start making a positive impact.
 
@@ -211,7 +211,7 @@ May the Demo Gods forever be in your favour Sophie!
 
 As a native English speaker, I have to admit that localization isn't the first thing that comes to my mind when developing a product. Thankfully I am aware of this and am going to take it more seriously in the future.
 
-I think localization often gets missed gets missed because we focus on users who are just like us. There is no reality where your users will be exactly like you! That is why we need to do user testing, get user feedback, and be more inclusive to all types of humans.
+I think localization often gets missed because we focus on users who are just like us. There is no reality where your users will be exactly like you! That is why we need to do user testing, get user feedback, and be more inclusive to all types of humans.
 
 Last year, [Nat Alison](https://twitter.com/tesseralis) asked the question "is React translated yet?" When she originally posed the question, the answer was no.
 
@@ -231,7 +231,7 @@ It is incredible what Nat and thousands of people have accomplished in the last 
 
 Just like localization, accessibility can be difficult. You have to think differently when you are developing for accessibility. You have to think about a broader audience, about people who might be _different_ than you. Sometimes that is difficult but we can all do it.
 
-Running a marathon is another example of something that can be difficult. According to RunRepeat, [1,298,725](https://runrepeat.com/research-marathon-performance-across-nations) people finished a marathon in 2018. They didn't wake up with the ability to do that. They started small and worked their way up to it.
+Running a marathon 🏃🏻‍♂️ is another example of something that can be difficult. According to RunRepeat, [1,298,725](https://runrepeat.com/research-marathon-performance-across-nations) people finished a marathon in 2018. They didn't wake up with the ability to do that. They started small and worked their way up to it.
 
 That's how we can approach accessibility. Taking an approach like this will remove some of the feeling of overwhelm if you are starting from square one. One of my favourite things about React Conf was learning about software development, and the world, from new viewpoints. [Brittany Feenstra](https://twitter.com/BrittanyIRL) was one of the people who helped me expand my perspective and I want to think more about accessibility going forward.
 
@@ -277,7 +277,7 @@ There are a ton of other great additions and I recommend you [go explore them fo
 
 I think I'm probably late to the Relay party. In fact, I'm late to the GraphQL party. In my [side project](https://writewithwrabit.com) I have been using GraphQL and I really enjoy it. After this conference I'm looking to explore Relay and take advantage of the power the combo provides.
 
-[React Suspense](https://reactjs.org/docs/concurrent-mode-suspense.html#what-is-suspense-exactly) wants to enable us to show _some_ of a UI without waiting for _all_ of it to become ready.
+[React Suspense](https://reactjs.org/docs/concurrent-mode-suspense.html#what-is-suspense-exactly) wants to enable us to show _some_ of a UI without waiting for _all_ of it to become ready ⏱.
 
 Let's take a look at a basic example of a component that shows a loading state (using Suspense) when it is fetching data:
 
@@ -361,7 +361,7 @@ She is tired.
 
 Her footsteps are heavier than before, the weight increasing as she trudges towards the bed, collapsing face-first onto the mattress.
 
-Same idea, right? She is dead tired. Which one is more powerful? Well that's obvious. As software engineers we often fall into the pit of telling. We abstract, abstract, abstract away until we are [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) as can be.
+Same idea, right? She is dead tired. Which one is more powerful? Well that's obvious. As software engineers we often fall into the pit of telling. We abstract, abstract, abstract away until we are [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) 🌵 as can be.
 
 Most of the time, I do try to avoid repetition in my code. The principle makes sense but, like the rules of writing, sometimes we need to break the rules of software development. Let's compare two different pieces of code achieving the same result.
 
@@ -442,7 +442,7 @@ Jenn also quoted a great Neil Gaiman quote that I can't resist sharing.
 
 > Remember that, sooner or later, before it reaches perfection, you will have to let it go and move on and start to write the next thing.
 
-I've been practicing getting to _good enough_ while I've been working on [Wrabit](https://writewithwrabit.com). Sometimes it makes me feel like less of a developer. Sometimes it makes me feel lazy. In the end, I'm going with what I can easly understand, what I can ship, and what I can always refactor later.
+I've been practicing getting to _good enough_ while I've been building [Wrabit](https://writewithwrabit.com), a mental health writing platform. Sometimes it makes me feel like less of a developer. Sometimes it makes me feel lazy. In the end, I'm going with what I can easly understand, what I can ship, and what I can always refactor later.
 
 As Jenn said, refactoring is not failure. Her talk weaved creative writing with programming so elegantly, I'll definitely be watcing it again.s
 
@@ -497,7 +497,7 @@ The Thorium simulator empowers many organizations like the [Lion's Gate Space Ce
 
 There have been more than a few presentations and people at React Conf doing highly inspirational things for good causes. Alex's work sticks out because his passion leaks out of every word he says. He loves what he is doing and is an extremely talented engineer. He's using the technology available to him to build great experiences for kids and adults alike.
 
-My favourite take away from Alex's talk (it's going to take me a while to fully digest it) is the concept of _wonder-driven development_. Have you ever wondered about the possibilities of technology? What about what _you_ are capable of?
+My favourite take away from Alex's talk (it's going to take me a while to fully digest it) is the concept of _wonder-driven development_. Have you ever wondered about the possibilities of technology? What about what _you_ are capable of? 🤔
 
 These types of questions drive us to build fun, enjoyable, and truly beautiful experiences. These types of questions allow engineers at Facebook and companies all around the world to shape our world with technology.
 
