@@ -12,6 +12,8 @@ The developer community can often be intimidating. The volunteers and organizers
 
 This post is going to be a reflection of _some_ of my favourite React Conf takeaways. Every single talk was worth watching, so I recommend you check out the recordings for [day one](https://www.youtube.com/watch?v=UxoX2faIgDQ) and [day two](https://www.youtube.com/watch?v=JDDxR1a15Yo). You might be surprised by some of the items on the list. I was too! Not everything is technical but there is a common thread weaving throughout.
 
+_Since the individual talks haven't been released (and I think you should see them all), scroll to the bottom for timestamped list of all the talks!_
+
 ## Developer Experience In Service of User Exeperience
 
 After [Tom Occhino](https://twitter.com/tomocchino) said it, I couldn't stop thinking about it. I couldn't stop seeing it in all the talks. I realized what I love so much about developer tools and the frontend.
@@ -348,6 +350,102 @@ Using these two APIs instead of `useQuery` will provide a loading sequence that 
 I definitely recommend you listen to [Joe Savona](https://twitter.com/en_JS) explain the concepts I've summarized above. He does a better job and gets more in-depth. This was one of my favourite talks because I'm excited by the possibilities this pattern enables and can't wait to try it myself.
 
 ## React is Fiction
+
+[Jenn Creighton](https://twitter.com/gurlcode) gave my favourite philosophical talk of the conference. She background in creative writing. Creative writing has always been something I loved. Like Jenn, I once fantasized about becoming an author. There was a concept she explained during her talk that translates to coding in an interesting (and unexpected) way.
+
+> Show, don't tell
+
+Let's look at two ways to convey the same meaning (courtesy of Jenn).
+
+She is tired.
+
+Her footsteps are heavier than before, the weight increasing as she trudges towards the bed, collapsing face-first onto the mattress.
+
+Same idea, right? She is dead tired. Which one is more powerful? Well that's obvious. As software engineers we often fall into the pit of telling. We abstract, abstract, abstract away until we are [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) as can be.
+
+Most of the time, I do try to avoid repetition in my code. The principle makes sense but, like the rules of writing, sometimes we need to break the rules of software development. Let's compare two different pieces of code achieving the same result.
+
+```jsx
+const Nav = ({ links }) => (
+  <nav>
+    {
+      links.map(link => (
+        <Link to={link.to}>{link.name}</Link>
+      ))
+    }
+  </nav>
+);
+
+const Header = () => {
+  const links = [
+    { name: 'Home', to: '/home' },
+    { name: 'Settings', to: '/settings' },
+  ];
+
+  return (
+    <>
+      <Nav links={links} />
+    </>
+  );
+}
+```
+
+This seems like it will work great, but what if we want to add a nav item that is an action? For example a login button.
+
+```javascript
+  const links = [
+    { name: 'Home', to: '/home' },
+    { name: 'Settings', to: '/settings' },
+    { name: 'Login', to: '??' },
+  ];
+```
+
+Our `Nav` component doesn't handle this edge case. We _could_ easily implement a method for it to handle it but this could easily get out of hand. We could refactor the `Nav` componnt to look something like this:
+
+```jsx
+const Nav = ({ links }) => (
+  <nav>
+    {
+      links.map(link => {
+        return link.to
+          ? <Link to={link.to}>{link.name}</Link>
+          : <a onClck={link.onClick}>{link.name}</Link>
+      })
+    }
+  </nav>
+);
+```
+
+This _would_ work but how many edge cases will we cover before it becomes harder to reason about our `Nav` component? We could rewrite the `Header` component another way.
+
+```jsx
+const Header = () => {
+  const links = [
+    { name: 'Home', to: '/home' },
+    { name: 'Settings', to: '/settings' },
+    { name: 'Login', to: '??' },
+  ];
+
+  return (
+    <nav>
+      <Link to="/home">Home</link>
+      <Link to="/settings">Settings</link>
+      <a onClick={onSelectLogin}>Login</a>
+    <nav/>
+  );
+}
+```
+
+I've simplified the example that Jenn delivered in her talk but I think it gets the point across. The second `Header` component is much easier to reason about. The abstraction didn't provide much benefit even though we mighth be repeating ourselves now. If we wanted to add an `Icon` component into _one_ of the links, we don't have to handle all the edge cases in a `Nav` component anymore, we can just add it where we want it.
+
+Jenn also quoted a great Neil Gaiman quote that I can't resist sharing.
+
+> Remeber that, sooner or later, before it reaches perfection, you will have to let it go and move on and start to write the next thing.
+
+I've been practicing getting to _good enough_ while I've been working on [Wrabit](https://writewithwrabit.com). Sometimes it makes me feel like less of a developer. Sometimes it makes me feel lazy. In the end, I'm going with what I can easly understand, what I can ship, and what I can always refactor later.
+
+As Jenn said, refactoring is not failure. Her talk weaved creative writing with programming so elegantly, I'll definitely be watcing it again.s
+
 
 ## UX-Driven Fluid Animations
 
