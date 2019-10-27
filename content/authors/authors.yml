@@ -1,17 +1,14 @@
 - name: Anthony Morris
   bio: |
-    Written by You. This is where your author bio lives. Share your work, your
-    joys and of course, your Twitter handle.
-  avatar: ./avatars/dennis-brotzky.jpg
+    I'm driven by growth and pushing the boundaries of my knowledge. I'm passionate about sharing what I know and giving back to the communities that made me. The only thing I love more than a good code refactor is a thick book with a cup of Soylent.
+  avatar: ./avatars/anthony-morris.jpg
   featured: true
   social:
     - name: github
-      url: https://github.com
+      url: https://github.com/amorriscode
     - name: twitter
-      url: https://github.com
+      url: https://twitter.com/amorriscode
     - name: instagram
-      url: https://github.com
-    - name: dribbble
-      url: https://github.com
+      url: https://www.instagram.com/amorrisphoto/
     - name: linkedin
-      url: https://github.com
+      url: https://www.linkedin.com/in/amorriscode/

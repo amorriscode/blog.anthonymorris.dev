@@ -54,16 +54,15 @@ const Trackline = styled.div`
   flex-direction: column;
   height: calc(88vh - 40px);
   max-height: 425px;
-  width: 2px;
+  width: 1px;
   background-color: ${p => p.theme.colors.track};
-  opacity: 0.6;
   box-shadow: 0 0 ${p => p.size}px 0px #61FF00;
 `;
 
 const ProgressLine = styled.div`
   height: ${p => p.height}%;
-  width: 2px;
+  width: 1px;
   background-color: ${p => p.theme.colors.progress};
   left: 0;
-  box-shadow: 0 0 ${p => p.size}px 0px #61FF00;
+  box-shadow: 0 0 ${p => p.size * 1.5}px 0px #61FF00;
 `;
