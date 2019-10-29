@@ -4,7 +4,7 @@ import styled from "@emotion/styled";
 export default function Logo() {
   const [dividerSize, setDividerSize] = useState(0);
 
-  setInterval(() => setDividerSize(Math.floor(Math.random() * 10)), 50);
+  // setInterval(() => setDividerSize(Math.floor(Math.random() * 10)), 50);
 
   return (
     <Brand>

@@ -12,7 +12,7 @@ function Progress({ contentHeight }: IProgress) {
   const [progress, setProgress] = useState<number>(0);
   const [glowSize, setGlowSize] = useState(0);
 
-  setInterval(() => setGlowSize(Math.floor(Math.random() * 10)), 50);
+  // setInterval(() => setGlowSize(Math.floor(Math.random() * 10)), 50);
 
   useEffect(() => {
     const handleScroll = throttle(() => {
