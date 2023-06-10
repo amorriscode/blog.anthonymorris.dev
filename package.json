@@ -14,7 +14,7 @@
     "@emotion/core": "^10.0.21",
     "@mdx-js/react": "^1.5.1",
     "@narative/gatsby-theme-novela": "^0.*",
-    "gatsby": "^2.13.41",
+    "gatsby": "^4.25.7",
     "gatsby-plugin-google-analytics": "^2.1.23",
     "gatsby-plugin-manifest": "^2.2.4",
     "gatsby-plugin-theme-ui": "^0.2.43",
